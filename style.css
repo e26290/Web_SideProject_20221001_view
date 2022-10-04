@@ -159,14 +159,13 @@ html, body {
 .index-head .banner img {
   width: 70%;
   height: 60%;
-  background-image: url(https://images.unsplash.com/photo-1664371902188-cb46e92e476b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1204&q=80);
   position: absolute;
   top: 30%;
   left: 25%;
   background-size: cover;
   background-position: center bottom;
   transform-origin: center;
-  filter: brightness(80%);
+  filter: brightness(70%);
 }
 .index-head .banner img:hover {
   transform: scale(0.9);
@@ -263,6 +262,7 @@ html, body {
   background-repeat: no-repeat;
   background-size: cover;
   filter: brightness(200%);
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -273,8 +273,27 @@ html, body {
   -webkit-text-stroke: 1px white;
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
+  -webkit-animation: scroll 30s linear infinite;
+          animation: scroll 30s linear infinite;
 }
 
+@-webkit-keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 @media (max-width: 600px) {
   .banner ul.news {
     opacity: 0;
